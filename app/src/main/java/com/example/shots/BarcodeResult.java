@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,7 +21,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class BarcodeResult extends AppCompatActivity {
-    DatabaseHelper mDatabaseHelper;
     TextView res;
 
     @Override
@@ -29,17 +29,13 @@ public class BarcodeResult extends AppCompatActivity {
         setContentView(R.layout.activity_barcode_result);
         res = (TextView) findViewById(R.id.barcode_text);
         res.setText(getIntent().getExtras().getString("barcode_data"));
-
-        //new sqli
-        mDatabaseHelper = new DatabaseHelper(this);
-
         addToDb();
     }
 
     public void addToDb() {
         String newEntry = res.getText().toString();
         if (res.length() != 0) {
-            AddData(newEntry);
+            saveToLocalDatabase(newEntry);
             res.setText("");
         } else {
             toastMessage("You must put something in the text field!");
@@ -47,14 +43,11 @@ public class BarcodeResult extends AppCompatActivity {
 
     }
 
-    public void AddData(String newEntry) {
-        boolean insertData = mDatabaseHelper.addData(newEntry);
-
-        if (insertData) {
-            toastMessage("Data Successfully Inserted!");
-        } else {
-            toastMessage("Something went wrong");
-        }
+    public void saveToLocalDatabase(String BR){
+        DBHelper dbHelper = new DBHelper(this);
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
+        dbHelper.saveToLocalDatabase_BR(BR,database);
+        dbHelper.close();
     }
 
     private void toastMessage(String message) {
