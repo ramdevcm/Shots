@@ -49,7 +49,6 @@ public class QrHistory extends AppCompatActivity {
             String QR = cursor.getString(cursor.getColumnIndex(DBConst.QRCODE));
             String DATE = cursor.getString(cursor.getColumnIndex(DBConst.DATE));
             List.add(new QRstructure(QR,DATE));
-            Log.i(TAG, "saveToLocalDatabase_QR: "+QR);
         }
 
 
