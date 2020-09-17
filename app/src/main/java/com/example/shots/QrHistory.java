@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 public class QrHistory extends AppCompatActivity {
 
@@ -40,12 +43,13 @@ public class QrHistory extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(this);
         SQLiteDatabase database =  dbHelper.getReadableDatabase();
 
-        cursor = dbHelper.readFromLocalDatabase_BR(database);
+        cursor = dbHelper.readFromLocalDatabase_QR(database);
 
         while(cursor.moveToNext()){
             String QR = cursor.getString(cursor.getColumnIndex(DBConst.QRCODE));
             String DATE = cursor.getString(cursor.getColumnIndex(DBConst.DATE));
             List.add(new QRstructure(QR,DATE));
+            Log.i(TAG, "saveToLocalDatabase_QR: "+QR);
         }
 
 

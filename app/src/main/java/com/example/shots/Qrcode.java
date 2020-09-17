@@ -63,5 +63,9 @@ public class Qrcode extends AppCompatActivity {
         Intent intent = new Intent(Qrcode.this, Dashboard.class);
         startActivity(intent);
     }
+    public void click_qrcode_history(View v) {
+        Intent intent = new Intent(Qrcode.this, QrHistory.class);
+        startActivity(intent);
+    }
 }
 
