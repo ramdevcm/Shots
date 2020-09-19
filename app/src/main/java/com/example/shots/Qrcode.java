@@ -39,7 +39,6 @@ public class Qrcode extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), QrResult.class);
                         result.getText();
                         intent.putExtra("qr_data", String.valueOf(result));
-
                         startActivity(intent);
                     }
                 });

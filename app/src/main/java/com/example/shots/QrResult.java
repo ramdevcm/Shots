@@ -22,8 +22,6 @@ public class QrResult extends AppCompatActivity {
         final String value = intent.getStringExtra("qr_data");
         res.setText(value);
         saveToLocalDatabase(value);
-
-
     }
 
     public void saveToLocalDatabase(String QR){
@@ -33,15 +31,13 @@ public class QrResult extends AppCompatActivity {
         dbHelper.close();
     }
 
-
-    public void click_qrcode_history(View v) {
-        Intent intent = new Intent(QrResult.this, QrHistory.class);
-        startActivity(intent);
-    }
-
     //for back button press at action bar
     public void click_back(View v) {
         Intent intent = new Intent(QrResult.this, Qrcode.class);
+        startActivity(intent);
+    }
+    public void click_qrcode_history(View v) {
+        Intent intent = new Intent(QrResult.this, QrHistory.class);
         startActivity(intent);
     }
 }

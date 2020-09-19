@@ -1,13 +1,7 @@
 package com.example.shots;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -17,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -24,9 +20,22 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 3000;
+
+   /*
+    private static String TAG = "MainActivity";
+
+    static
+    {
+        if(OpenCVLoader.initDebug())
+            Log.d(TAG,"Logged");
+        else
+            Log.d(TAG,"Failed");
+    }
+*/
     Animation topanim, bottomanim, slogananim;
     ImageView logoimg;
     TextView app_name, slogan;

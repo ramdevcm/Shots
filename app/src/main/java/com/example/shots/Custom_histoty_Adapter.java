@@ -18,7 +18,7 @@ public class Custom_histoty_Adapter extends RecyclerView.Adapter<Custom_histoty_
     // List to store all the contact details
     private ArrayList<Barcodestructure> contactsList;
     private Context mContext;
-    // Counstructor for the Class
+    // Constructor for the Class
     public Custom_histoty_Adapter(ArrayList<Barcodestructure> contactsList, Context context) {
         this.contactsList = contactsList;
         this.mContext = context;

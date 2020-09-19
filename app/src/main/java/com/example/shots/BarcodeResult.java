@@ -28,10 +28,14 @@ public class BarcodeResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode_result);
         res = (TextView) findViewById(R.id.barcode_text);
-        res.setText(getIntent().getExtras().getString("barcode_data"));
-        addToDb();
+       // res.setText(getIntent().getExtras().getString("barcode_data"));
+        Intent intent = getIntent();
+        final String value = intent.getStringExtra("barcode_data");
+        res.setText(value);
+        saveToLocalDatabase(value);
     }
 
+/*
     public void addToDb() {
         String newEntry = res.getText().toString();
         if (res.length() != 0) {
@@ -42,6 +46,8 @@ public class BarcodeResult extends AppCompatActivity {
         }
 
     }
+
+ */
 
     public void saveToLocalDatabase(String BR){
         DBHelper dbHelper = new DBHelper(this);
