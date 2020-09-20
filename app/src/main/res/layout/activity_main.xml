@@ -4,26 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D1C4E9"
+    android:background="#FFFFF"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="164dp"
-        android:layout_height="164dp"
-        android:layout_marginTop="160dp"
-        android:src="@drawable/shotsicon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="676dp"
         android:fontFamily="@font/roboto"
         android:shadowColor="#FFFFFF"
         android:text="SHOTS"
@@ -40,7 +28,7 @@
         android:id="@+id/slogan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="612dp"
+        android:layout_marginTop="1072dp"
         android:autoText="false"
         android:fontFamily="@font/armata"
         android:shadowColor="#000000"
@@ -51,8 +39,16 @@
         android:textColorLink="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_shotslogo"
+        tools:layout_editor_absoluteX="303dp"
+        tools:layout_editor_absoluteY="389dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
