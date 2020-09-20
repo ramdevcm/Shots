@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.view.WindowManager;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -22,6 +23,8 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
        /* if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
 
@@ -43,6 +46,14 @@ public class Dashboard extends AppCompatActivity {
     }
     public void click_bar(View v) {
         Intent intent = new Intent(Dashboard.this, Barcode.class);
+        startActivity(intent);
+    }
+    public void click_ocr(View v) {
+        Intent intent = new Intent(Dashboard.this, Ocr.class);
+        startActivity(intent);
+    }
+    public void click_idcard(View v) {
+        Intent intent = new Intent(Dashboard.this, Id.class);
         startActivity(intent);
     }
 
